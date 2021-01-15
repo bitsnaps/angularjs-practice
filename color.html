@@ -1,0 +1,25 @@
+  <div class="row">
+    <div class="col-md-12">
+    <h1>Color</h1>
+
+      <a href="#" class="btn btn-danger" ng-click="removeAll()" ng-show="colors.length">Remove all</a>
+      <ul>
+          <li ng-repeat="color in colors">{{ color }}
+              <a href="#" ng-click="removeColor(color)" ng-hide="saveMode">Remove</a>
+              <a href="#" ng-click="editColor(color)">Edit</a>
+          </li>
+      </ul>
+      <p>Color Name:</p>
+      <form action="#">
+          <div class="form-group">
+          <input type="text" class="form-control" name="colorName" ng-model="colorName"  />
+          </div>
+          <div class="form-group pull-right">
+          <input type="button" class="btn btn-primary" value="Add Color" ng-click="addColor()" ng-hide="saveMode" />
+          <input type="button" class="btn btn-warning" value="Cancel" ng-click="cancelSave()" ng-show="saveMode" />
+          <input type="button" class="btn btn-success" value="Save Color" ng-click="saveColor()" ng-show="saveMode" />
+          </div>
+      </form>
+
+    </div>
+  </div>
